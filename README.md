@@ -1,53 +1,102 @@
-BellyGo – Because Happy Bellies Matter
+ MERN Authentication Project
 
-Overview
+📌 Overview
+This is a **MERN stack** project for user authentication, including **user registration** and **login** functionality. The backend is built using **Node.js, Express, MongoDB, and Mongoose**, while the frontend is developed with **React**.
 
-BellyGo is a frontend web application designed to enhance the user experience through an intuitive and responsive interface. This project is built using React and follows a structured component-based architecture.
+🛠 Tech Stack
+- **Frontend:** React, Vite
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB with Mongoose
+- **Authentication:** bcrypt.js for password hashing
 
-Project Structure
+📂 Project Structure
+```
+backend/
+│── models/
+│   └── User.js          # User schema
+│── routes/
+│── server.js            # Main backend server
+│── .env                 # Environment variables
+│── package.json         # Dependencies
+│
+frontend/
+│── src/
+│   ├── pages/
+│   │   ├── Login.jsx    # Login page
+│   │   ├── Register.jsx # Register page
+│   ├── App.jsx          # Main App component
+│── vite.config.js       # Vite configuration
+│── package.json         # Frontend dependencies
+```
 
-The src folder contains two main directories:
+🚀 Getting Started
+ 1️⃣ Clone the Repository
+git clone https://github.com/yourusername/mern-auth.git
+cd mern-auth
 
-components/
-
-Navbar.jsx: Contains the navigation bar for the application.
-
-pages/
-
-Login.jsx: Login page for user authentication.
-
-Register.jsx: User registration page.
-
-Home.jsx: Home page of the application.
-
-Installation & Setup
-
-Follow these steps to set up and run the project locally:
-
-Clone the repository:
-
-git clone <repository-url>
-
-Navigate to the project directory:
-
-cd BellyGo
-
-Install dependencies:
-
+ 2️⃣ Setup Backend
+cd backend
 npm install
 
-Run the development server:
-
+➤Create a `.env` file in `backend/` and add:
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/<database>
+PORT=3000
+➤ Start Backend Server
 npm run dev
+Server runs at `http://localhost:3000`
 
-Open your browser and visit:
+3️⃣ Setup Frontend
+cd frontend
+npm install
 
-http://localhost:5173/
+➤ Start Frontend Server
+npm run dev
+Frontend runs at `http://localhost:5173`
 
-Technologies Used
+🔥 API Endpoints
 
-React.js
+➤ Register User
+**POST** `http://localhost:3000/register`
+Request Body:
+```json
+{
+  "username": "JohnDoe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+Response:
+```json
+{
+  "message": "User registered successfully"
+}
+```
 
-Vite (for fast development)
+### ➤ Login User
+**POST** `http://localhost:3000/login`
+#### Request Body:
+```json
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+#### Response:
+json
+{
+  "message": "Login Successful",
+  "username": "JohnDoe"
+}
 
-Tailwind CSS (if styling is added)
+## 📌 Features
+✅ User Registration & Login  
+✅ Password Hashing with bcrypt.js  
+✅ MongoDB Database with Mongoose  
+✅ API Endpoints for Authentication  
+
+## 💡 Future Enhancements
+- Add JWT Authentication
+- Implement User Sessions
+- Improve UI/UX with Tailwind CSS
+
+
